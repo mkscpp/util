@@ -22,8 +22,13 @@ if(MSVC)
     set(LIBS dbghelp)
 endif(MSVC)
 
-add_subdirectory(lib/date)
-add_subdirectory(lib/log)
+if(NOT TARGET date::date)
+    add_subdirectory(lib/date)
+endif()
+
+if(NOT TARGET mks_log)
+    add_subdirectory(lib/log)
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_link_libraries(${PROJECT_NAME} mks_log date::date)
