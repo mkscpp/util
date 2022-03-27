@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-
 project(mks_util)
-message(">> Module ${PROJECT_NAME}")
 
 file(GLOB_RECURSE SOURCE_FILES FILES_MATCHING PATTERN "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})
@@ -24,10 +22,14 @@ endif(MSVC)
 
 if(NOT TARGET date::date)
     add_subdirectory(lib/date)
+else()
+    message(STATUS "date::date target already set")
 endif()
 
 if(NOT TARGET mks_log)
     add_subdirectory(lib/log)
+else()
+    message(STATUS "mks_log target already set")
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
