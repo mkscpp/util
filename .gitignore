@@ -1,0 +1,42 @@
+# CLion
+.idea
+/cmake-build-*/
+
+# raw cmake when building into the source code
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# macOS
+.DS_Store
+*.o
+
+# Geany IDE
+*.geany
+
+# Qt
+*.pro.user
+
+/test/
+/app.db
+
+/Dataset/
+/Demo/
+/Doc/
+/Data/
+/Temp
+/Tests
+/node_modules/
+
+# Visual Studio
+CMakeSettings.json
+/out/
+/.vs/
